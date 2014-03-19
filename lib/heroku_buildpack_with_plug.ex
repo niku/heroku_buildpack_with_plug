@@ -1,0 +1,2 @@
+defmodule HerokuBuildpackWithPlug do
+end
