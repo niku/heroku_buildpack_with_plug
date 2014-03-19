@@ -14,5 +14,6 @@ defmodule HerokuBuildpackWithPlug do
   end
 end
 
-IO.puts "Running HerokuBuildpackWithPlug with Cowboy on http://localhost:4000"
-Plug.Adapters.Cowboy.http HerokuBuildpackWithPlug, []
+port = System.get_env("PORT")
+IO.puts "Running HerokuBuildpackWithPlug with Cowboy on http://localhost:#{port}"
+Plug.Adapters.Cowboy.http HerokuBuildpackWithPlug, [], port: binary_to_integer(port)
